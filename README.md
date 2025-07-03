@@ -1,6 +1,19 @@
 # Project: 5-inch FPV Drone Filtering and PID Tuning (Betaflight 4.6, PIDToolbox)
 
-## Repository Description
+## Table of Contents
+
+1.  [Description](#description)
+2.  [Tuning Goals & Technical Criteria](#tuning-goals)
+3.  [Specifications](#specifications)
+4.  [Test Flight Types](#test-flight-types)
+    - [1. Basic Wobble Test](#1-basic-wobble-test)
+    - [2. Verification Flight](#2-verification-flight)
+    - [3. Full Throttle Flight](#3-full-throttle-flight)
+5.  [Filtering Optimization Process](#filtering-optimization-process)
+    - [Optimization Process and Latency Analysis](#optimization-process-and-latency-analysis)
+    - [Summary & Spectrograms](#summary)
+
+## Description
 
 This repository is a technical documentation of the 5-inch FPV drone tuning process. The methodology and data analysis are primarily based on the educational materials and software from **PID toolbox, created by Brian White**. This repository contains a collection of materials, logs, and configuration dumps that step-by-step document the process of optimizing settings in Betaflight 4.6.
 
@@ -11,7 +24,7 @@ The main goal of this process was to achieve the following results through preci
 *   Improved responsiveness and control precision.
 *   Maximum elimination of **propwash**.
 
-### Technical Criteria:
+## Technical Criteria:
 
 #### Filtering:
 *   Reduction of frequency noise to below **-10dB** on the spectrum analyzer.
