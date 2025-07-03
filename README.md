@@ -88,7 +88,7 @@ Nalezy użyć wraz z trybem angle mode o okreśnych paramterach:
 
 ##### Logi 1-5: 
 
-![Spektrogram Gyro i Prefilt dla logow 1-5](./spectrograms/log1-5_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Gyro i Prefilt dla logow 1-5](spectograms/log1-5_Dterm.PNG)
 ![Spektrogram Dterm dla logów 1-5](./spectrograms/log1-5_Dterm.PNG)
 
 ---
