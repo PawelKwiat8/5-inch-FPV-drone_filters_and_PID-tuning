@@ -88,23 +88,23 @@ Nalezy użyć wraz z trybem angle mode o okreśnych paramterach:
 
 ##### Logi 1-5: 
 
-![Spektrogram Gyro i Prefilt dla logow 1-5](spectograms/log1-5_Dterm.PNG)
-![Spektrogram Dterm dla logów 1-5](./spectrograms/log1-5_Dterm.PNG)
+![Spektrogram Gyro i Prefilt dla logow 1-5](./spectograms/log1-5_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Dterm dla logów 1-5](spectograms/log1-5_Dterm.PNG)
 
 ---
 
 ##### Logi 5-8: zmniejszanie 'rpm_filter_weights'
 
-![Spektrogram Gyro i Prefilt dla logów 5-8](spectrograms/log5-8_Gyro_GyroPrefit_delays.PNG)
-![Spektrogram Szumu Silników dla logów 5-8](spectrograms/log5-8_Motor_Noise.PNG)
-![Spektrogram Dterm dla logów 5-8](./spectrograms/log5-8_Dterm.PNG)
+![Spektrogram Gyro i Prefilt dla logów 5-8](./spectograms/log5-8_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Szumu Silników dla logów 5-8](./spectograms/log5-8_Motor_Noise.PNG)
+![Spektrogram Dterm dla logów 5-8](./spectograms/log5-8_Dterm.PNG)
 
 ---
 
 ##### Logi 8-9: zmniejszenie 'Notch q_factor'
 
-![Spektrogram Gyro i Prefilt dla logów 8-9](./spectrograms/log8-9_Gyro_GyroPrefit_delays.PNG)
-![Spektrogram Dterm dla logów 8-9](./spectrograms/log8-9_Dterm.PNG)
+![Spektrogram Gyro i Prefilt dla logów 8-9](./spectograms/log8-9_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Dterm dla logów 8-9](./spectograms/log8-9_Dterm.PNG)
 
 
 
