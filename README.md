@@ -54,17 +54,57 @@ Nalezy użyć wraz z trybem angle mode o okreśnych paramterach:
 <img src="./angle_mode.PNG" alt="Ustawienia trybu Angle Mode w Betaflight" width="30%">
 
 
-#### 2. Lot Weryfikacyjny 
+### 2. Lot Weryfikacyjny 
 
 1.  Wykonaj standardowy, swobodny lot w trybie Acro, unikając gwałtownych manewrów.
 2.  Po wylądowaniu **natychmiast sprawdź temperaturę silników**. Powinny być co najwyżej lekko ciepłe.
     *   **Uwaga:** Jeśli silniki są gorące, nie przechodź do kolejnego etapu. Oznacza to problem ze zbut niskim filtrowaniem, który należy rozwiązać w pierwszej kolejności.
 
-#### 3. Test Obciążeniowy full Throttle 
+#### 3. Lot Full Throttle 
 
 1.  Wykonaj **2-3 pełne przyspieszenia** , utrzymując przepustnicę wysokim poziomie przez kilka sekund.
 2.  Podczas lotu na wysokiej przepustnicy wykonaj **serię szybkich obrotów**  w każdej osi:
-   
+
+
+## Proces Filtracji – Analiza Krok po Kroku
+
+Poniżej znajduje się chronologiczny zapis zmian wprowadzanych w ustawieniach filtrów. Każdy krok był poprzedzony testem nr 1 w locie i analizą logów z czarnej skrzynki, co pozwalało na ocenę wpływu danej zmiany.
+
+#### Opóźnienia Systemu (Latency)
+
+Poniższa tabela przedstawia, jak zmieniały się opóźnienia żyroskopu (`Gyro`) i członu różniczkującego (`Dterm`) w trakcie procesu. Dane zostały odczytane z dostarczonych wykresów.
+
+
+#### Wprowadzone Zmiany
+
+1.  **Ustawienie `rpm_filter_weights = 100, 60, 75`**
+2.  **Ustawienie `rpm_filter_q = 1000`, `q_factor = 300`, `notch_count = 3`** 
+3.  **Ustawienie `gyro_filter_multiplier = 2`**
+4.  **Ustawienie `dterm_filter_multiplier = 1.3`**
+5.  **Ustawienie `rpm_filter_weights = 100, 50, 65`**  
+6.  **Ustawienie `rpm_filter_weights = 100, 30, 75`**   
+7.  **Ustawienie `rpm_filter_weights = 100, 20, 55`**
+8.  **Ustawienie `dynamic_notch_q = 350`**
+  
+#### Analiza Opóźnień Systemu (Latency)
+Poniższa tabela przedstawia, jak zmieniały się opóźnienia systemu w trakcie kolejnych kroków optymalizacji. Wartości w każdej komórce przedstawiono w formacie **`Gyro / Dterm`** (w milisekundach).
+
+| Krok (Log) | Roll (Gyro / Dterm ms) | Pitch (Gyro / Dterm ms) | Yaw (Gyro / Dterm ms) |
+| :--- | :---: | :---: | :---: |
+| **Log 1**   | 1.875 / 1.875 | 1.875 / 1.875 | 2.25 / 2.0 |
+| **Log 3**   | 1.875 / 1.875 | 1.75 / 1.875 | 2.0 / 1.875 |
+| **Log 4**   | 1.625 / 1.5   | 1.75 / 1.5   | 1.875 / 1.75 |
+| **Log 5**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
+| **Log 6**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
+| **Log 7**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
+| **Log 8**   | 1.625 / 1.5   | 1.5 / 1.5   | 1.625 / 1.625 |
+| **Log 9**   | 1.25 / 1.375  | 1.5 / 1.5   | 1.625 / 1.625 |
+
+#### Podsumowanie
+
+Proces optymalizacji został zatrzymany po kroku 8.  **analiza  log009 wykazała, że szum na osi `dterm`  przekraczał docelowy poziom -10dB**.
+Silniki lekko si enagrzewają ale nie sa gorące.
+
 
 
 
