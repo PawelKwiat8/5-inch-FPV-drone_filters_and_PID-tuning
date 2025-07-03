@@ -82,7 +82,7 @@ It should be used with **Angle Mode** set to the following specific parameters:
 ## Filtering Optimization Process
 
 ### Optimization Process and Latency Analysis
-
+### 1. Basic Wobble Test
 The following table presents the chronological progression of changes made and their impact on system latency. The values in each cell are shown in the format **`Gyro / Dterm`** (in milliseconds).
 
 | Step | Change Made | Resulting Log | Roll (Gyro / Dterm ms) | Pitch (Gyro / Dterm ms) | Yaw (Gyro / Dterm ms) |
@@ -122,4 +122,8 @@ The following table presents the chronological progression of changes made and t
 ![Dterm Spectrogram for logs 8-9](./spectograms/log8-9_Dterm.PNG)
 
 
+### 2. Verification Flight
+
+
+### 3. Full Throttle Flight
 
