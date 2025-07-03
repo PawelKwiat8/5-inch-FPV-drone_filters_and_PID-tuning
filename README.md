@@ -10,19 +10,17 @@ Niniejsze repozytorium stanowi techniczną dokumentację procesu strojenia 5-cal
 Głównym celem przeprowadzonych prac było osiągnięcie następujących rezultatów poprzez precyzyjne strojenie filtrów i pętli PID:
 
 *   Poprawa responsywności i precyzji sterowania.
-*   Maksymalna eliminacja zjawiska `propwash` (drgań w turbulentnym powietrzu).
+*   Maksymalna eliminacja zjawiska **propwash** 
 
-kryteria techniczne:
+### Kryteria techniczne:
 
-Filtracja:
+#### Filtracja:
 *  Redukcja szumów częstotliwościowych do poziomu poniżej **-10dB** na wykresie spektralnym.
 *  Gyro delay w okolicach **1.5ms**.
   
-Należy pamiętać, że powyższe wartości są orientacyjne. Kluczowe jest znalezienie balansu, ponieważ zbyt agresywne filtrowanie wprowadza opóźnienia (latency), natomiast zbyt słabe może prowadzić do przegrzewania się silników.
-żródło: materiały 
+Należy pamiętać, że powyższe wartości są orientacyjne. Kluczowe jest znalezienie balansu, ponieważ zbyt agresywne filtrowanie wprowadza opóźnienia , natomiast zbyt słabe może prowadzić do przegrzewania się silników.
 
-PID tuning:
-
+#### PID tuning:
 
 ## Specyfikacja
 
@@ -33,18 +31,44 @@ PID tuning:
 *   **Śmigła:** iFlight Nazgul F5 (5140) 3-łopatowe
 *   **Akumulator:** CNHL 4S 1500mAh 100C
 
-## Metodologia Testów
+## Rodzaje Lotów testowych 
 
 Dane do analizy zbierałem przy użyciu dwóch kluczowych metod:
-1. Wobble Test
-   
+### 1. Podstawowy  Wobble Test
+
+Procedura Wykonania Testu:
+Wystartuj i ustabilizuj drona w zawisie (hover).
+Uruchom skrypt Wobble Test na nadajniku.
+Podczas gdy test jest aktywny (~30 sekund), płynnie i powoli zmieniaj położenie przepustnicy (throttle).
+Reguluj przepustnicę w takim zakresie, aby dron wznosił się i opadał o około 2-3 metry. Celem jest zapisanie w czarnej skrzynce danych z całego zakresu pracy silników.
+
+#### Konfiuracja 
 Metoda ta  polega na wygenerowaniu przez nadajnik ciągłych, sinusoidalnych ruchów w osiach Roll i Pitch.
+
+żródło:
+
 https://www.youtube.com/watch?v=NczSDkKn9pY&ab_channel=PIDtoolbox
 
-Nalezy jej uzywac w trybe angle mode o okreśnych paramterach:
-![Alt text](angle_mode.png)
+Nalezy użyć wraz z trybem angle mode o okreśnych paramterach:
+
+<img src="./angle_mode.PNG" alt="Ustawienia trybu Angle Mode w Betaflight" width="30%">
 
 
-2.  Testy w full Throttle
+#### 2. Lot Weryfikacyjny 
+
+1.  Wykonaj standardowy, swobodny lot w trybie Acro, unikając gwałtownych manewrów.
+2.  Po wylądowaniu **natychmiast sprawdź temperaturę silników**. Powinny być co najwyżej lekko ciepłe.
+    *   **Uwaga:** Jeśli silniki są gorące, nie przechodź do kolejnego etapu. Oznacza to problem ze zbut niskim filtrowaniem, który należy rozwiązać w pierwszej kolejności.
+
+#### 3. Test Obciążeniowy full Throttle 
+
+1.  Wykonaj **2-3 pełne przyspieszenia** , utrzymując przepustnicę wysokim poziomie przez kilka sekund.
+2.  Podczas lotu na wysokiej przepustnicy wykonaj **serię szybkich obrotów**  w każdej osi:
+   
+
+
+
+
+
 
 
