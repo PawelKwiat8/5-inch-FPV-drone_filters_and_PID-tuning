@@ -89,13 +89,13 @@ The following table presents the chronological progression of changes made and t
 | :--: | :--- | :---: | :---: | :---: | :---: |
 | 0 | **Default values** | **Log 1** | 1.875 / 1.75 | 1.875 / 1.875 | 2.25 / - |
 | 1 | `rpm_filter_weights = 100, 60, 75` | **Log 2** | No data | No data | No data |
-| 2 | `rpm_filter_q = 1000`, `q_factor = 300`, `notch_count = 3` | **Log 3** | 1.875 / 1.875 | 1.875 / 1.875 | 2.0 / - |
+| 2 | `rpm_filter_q = 1000`, `notch_q_factor = 300`, `notch_count = 3` | **Log 3** | 1.875 / 1.875 | 1.875 / 1.875 | 2.0 / - |
 | 3 | `gyro_filter_multiplier = 2` | **Log 4** | 1.625 / 1.875 | 1.75 / 1.875 | 2.0 / - |
 | 4 | `dterm_filter_multiplier = 1.3` | **Log 5** | 1.625 / 1.5 | 1.75 / 1.5 | 1.875 / - |
 | 5 | `rpm_filter_weights = 100, 50, 65` | **Log 6** | 1.5 / 1.5 | 1.5 / 1.5 | 1.875 / - |
 | 6 | `rpm_filter_weights = 100, 30, 65` | **Log 7** | 1.5 / 1.5 | 1.5 / 1.5 | 1.75 / - |
 | 7 | `rpm_filter_weights = 100, 20, 55` | **Log 8** | 1.375 / 1.5 | 1.5 / 1.5 | 1.625 / - |
-| 8 | `dynamic_notch_q = 350` | **Log 9** | 1.25 / 1.375 | 1.5 / 1.5 | 1.5 / - |
+| 8 | `notch_q_factor = 350` | **Log 9** | 1.25 / 1.375 | 1.5 / 1.5 | 1.5 / - |
 
 #### Summary
 *   **The optimization process was stopped at step 8.** Analysis of `log009` showed that the `dterm` noise still exceeded the target level of -10dB.
@@ -116,7 +116,7 @@ The following table presents the chronological progression of changes made and t
 
 ---
 
-##### Logs 8-9: Decreasing 'dynamic_notch_q'
+##### Logs 8-9: Increasing 'dynamic_notch_q'
 
 ![Gyro and Prefilt Spectrogram for logs 8-9](./spectograms/log8-9_Gyro_GyroPrefit_delays.PNG)
 ![Dterm Spectrogram for logs 8-9](./spectograms/log8-9_Dterm.PNG)
