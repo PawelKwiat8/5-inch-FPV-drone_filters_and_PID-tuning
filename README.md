@@ -66,44 +66,45 @@ Nalezy użyć wraz z trybem angle mode o okreśnych paramterach:
 2.  Podczas lotu na wysokiej przepustnicy wykonaj **serię szybkich obrotów**  w każdej osi:
 
 
-## Proces Filtracji – Analiza Krok po Kroku
+## Proces Optymalizacji filtracji
 
-Poniżej znajduje się chronologiczny zapis zmian wprowadzanych w ustawieniach filtrów. Każdy krok był poprzedzony testem nr 1 w locie i analizą logów z czarnej skrzynki, co pozwalało na ocenę wpływu danej zmiany.
-
-#### Opóźnienia Systemu (Latency)
-
-Poniższa tabela przedstawia, jak zmieniały się opóźnienia żyroskopu (`Gyro`) i członu różniczkującego (`Dterm`) w trakcie procesu. Dane zostały odczytane z dostarczonych wykresów.
-
-
-#### Wprowadzone Zmiany
-
-1.  **Ustawienie `rpm_filter_weights = 100, 60, 75`**
-2.  **Ustawienie `rpm_filter_q = 1000`, `q_factor = 300`, `notch_count = 3`** 
-3.  **Ustawienie `gyro_filter_multiplier = 2`**
-4.  **Ustawienie `dterm_filter_multiplier = 1.3`**
-5.  **Ustawienie `rpm_filter_weights = 100, 50, 65`**  
-6.  **Ustawienie `rpm_filter_weights = 100, 30, 75`**   
-7.  **Ustawienie `rpm_filter_weights = 100, 20, 55`**
-8.  **Ustawienie `dynamic_notch_q = 350`**
-  
-#### Analiza Opóźnień Systemu (Latency)
-Poniższa tabela przedstawia, jak zmieniały się opóźnienia systemu w trakcie kolejnych kroków optymalizacji. Wartości w każdej komórce przedstawiono w formacie **`Gyro / Dterm`** (w milisekundach).
-
-| Krok (Log) | Roll (Gyro / Dterm ms) | Pitch (Gyro / Dterm ms) | Yaw (Gyro / Dterm ms) |
-| :--- | :---: | :---: | :---: |
-| **Log 1**   | 1.875 / 1.875 | 1.875 / 1.875 | 2.25 / 2.0 |
-| **Log 3**   | 1.875 / 1.875 | 1.75 / 1.875 | 2.0 / 1.875 |
-| **Log 4**   | 1.625 / 1.5   | 1.75 / 1.5   | 1.875 / 1.75 |
-| **Log 5**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
-| **Log 6**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
-| **Log 7**   | 1.625 / 1.5   | 1.625 / 1.5   | 1.875 / 1.625 |
-| **Log 8**   | 1.625 / 1.5   | 1.5 / 1.5   | 1.625 / 1.625 |
-| **Log 9**   | 1.25 / 1.375  | 1.5 / 1.5   | 1.625 / 1.625 |
+| Krok | Wprowadzona Zmiana | Log Wynikowy | Roll (Gyro / Dterm ms) | Pitch (Gyro / Dterm ms) | Yaw (Gyro / Dterm ms) |
+| :--: | :--- | :---: | :---: | :---: | :---: |
+| 0 | **Wartości domyślne** | **Log 1** | 1.875 / 1.875 | 1.875 / 1.875 | 2.25 / 2.0 |
+| 1 | `rpm_filter_weights = 100, 60, 75` | **Log 3** | 1.875 / 1.875 | 1.75 / 1.875 | 2.0 / 1.875 |
+| 2 | `rpm_filter_q = 1000`, `q_factor = 300`, `notch_count = 3` | **Log 4** | 1.625 / 1.5 | 1.75 / 1.5 | 1.875 / 1.75 |
+| 3 | `gyro_filter_multiplier = 2` | **Log 5** | 1.625 / 1.5 | 1.625 / 1.5 | 1.875 / 1.625 |
+| 4 | `dterm_filter_multiplier = 1.3` | **Log 6** | 1.625 / 1.5 | 1.625 / 1.5 | 1.875 / 1.625 |
+| 5 | `rpm_filter_weights = 100, 50, 65` | **Log 7** | 1.625 / 1.5 | 1.625 / 1.5 | 1.875 / 1.625 |
+| 6 | `rpm_filter_weights = 100, 30, 75` | **Log 8** | 1.625 / 1.5 | 1.5 / 1.5 | 1.625 / 1.625 |
+| 7 | `rpm_filter_weights = 100, 20, 55` | **Log 9** | 1.25 / 1.375 | 1.5 / 1.5 | 1.625 / 1.625 |
+| 8 | `dynamic_notch_q = 350` | *(Brak)* | - | - | - |
 
 #### Podsumowanie
+*  Proces optymalizacji został zatrzymany po kroku 8. , **analiza  log009 wykazała, że szum na osi `dterm`  przekraczał docelowy poziom -10dB**.
 
-Proces optymalizacji został zatrzymany po kroku 8.  **analiza  log009 wykazała, że szum na osi `dterm`  przekraczał docelowy poziom -10dB**.
-Silniki lekko si enagrzewają ale nie sa gorące.
+*  Temperatura silników po locach testowych była akceptowalna (silniki były lekko ciepłe, ale nie gorące), co sugeruje, że ogólna filtracja jest bliska optymalnej, ale wymaga dalszej, precyzyjnej korekty.
+
+
+##### Logi 1-5: 
+
+![Spektrogram Gyro i Prefilt dla logow 1-5](./spectrograms/log1-5_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Dterm dla logów 1-5](./spectrograms/log1-5_Dterm.PNG)
+
+---
+
+##### Logi 5-8: zmniejszanie 'rpm_filter_weights'
+
+![Spektrogram Gyro i Prefilt dla logów 5-8](spectrograms/log5-8_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Szumu Silników dla logów 5-8](spectrograms/log5-8_Motor_Noise.PNG)
+![Spektrogram Dterm dla logów 5-8](./spectrograms/log5-8_Dterm.PNG)
+
+---
+
+##### Logi 8-9: zmniejszenie 'Notch q_factor'
+
+![Spektrogram Gyro i Prefilt dla logów 8-9](./spectrograms/log8-9_Gyro_GyroPrefit_delays.PNG)
+![Spektrogram Dterm dla logów 8-9](./spectrograms/log8-9_Dterm.PNG)
 
 
 
