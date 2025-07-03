@@ -92,20 +92,23 @@ The following table presents the chronological progression of changes made and t
 
 ##### Logs 1-5:
 
-![Gyro and Prefilt Spectrogram for logs 1-5](./spectrograms/log1-5_Gyro_GyroPrefit_delays.PNG)
-![Dterm Spectrogram for logs 1-5](./spectrograms/log1-5_Dterm.PNG)
+![Gyro and Prefilt Spectrogram for logs 1-5](./spectograms/log1-5_Gyro_GyroPrefit_delays.PNG)
+![Dterm Spectrogram for logs 1-5](./spectograms/log1-5_Dterm.PNG)
 
 ---
 
 ##### Logs 5-8: Decreasing 'rpm_filter_weights'
 
-![Gyro and Prefilt Spectrogram for logs 5-8](./spectrograms/log5-8_Gyro_GyroPrefit_delays.PNG)
-![Motor Noise Spectrogram for logs 5-8](./spectrograms/log5-8_Motor_Noise.PNG)
-![Dterm Spectrogram for logs 5-8](./spectrograms/log5-8_Dterm.PNG)
+![Gyro and Prefilt Spectrogram for logs 5-8](./spectograms/log5-8_Gyro_GyroPrefit_delays.PNG)
+![Motor Noise Spectrogram for logs 5-8](./spectograms/log5-8_Motor_Noise.PNG)
+![Dterm Spectrogram for logs 5-8](./spectograms/log5-8_Dterm.PNG)
 
 ---
 
 ##### Logs 8-9: Decreasing 'dynamic_notch_q'
 
-![Gyro and Prefilt Spectrogram for logs 8-9](./spectrograms/log8-9_Gyro_GyroPrefit_delays.PNG)
-![Dterm Spectrogram for logs 8-9](./spectrograms/log8-9_Dterm.PNG)
+![Gyro and Prefilt Spectrogram for logs 8-9](./spectograms/log8-9_Gyro_GyroPrefit_delays.PNG)
+![Dterm Spectrogram for logs 8-9](./spectograms/log8-9_Dterm.PNG)
+
+
+
