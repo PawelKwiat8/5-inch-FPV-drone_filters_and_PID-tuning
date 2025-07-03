@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1.  [Description](#description)
-2.  [Tuning Goals & ](#tuning-goals)
+2.  [Tuning Goals](#tuning-goals)
 3.  [Technical Criteria](#Technical-criteria)
 4.  [Specifications](#specifications)
 5.  [Test Flight Types](#test-flight-types)
