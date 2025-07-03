@@ -3,13 +3,14 @@
 ## Table of Contents
 
 1.  [Description](#description)
-2.  [Tuning Goals & Technical Criteria](#tuning-goals)
-3.  [Specifications](#specifications)
-4.  [Test Flight Types](#test-flight-types)
+2.  [Tuning Goals & ](#tuning-goals)
+3.  [Technical Criteria](#Technical-criteria)
+4.  [Specifications](#specifications)
+5.  [Test Flight Types](#test-flight-types)
     - [1. Basic Wobble Test](#1-basic-wobble-test)
     - [2. Verification Flight](#2-verification-flight)
     - [3. Full Throttle Flight](#3-full-throttle-flight)
-5.  [Filtering Optimization Process](#filtering-optimization-process)
+6.  [Filtering Optimization Process](#filtering-optimization-process)
     - [Optimization Process and Latency Analysis](#optimization-process-and-latency-analysis)
     - [Summary & Spectrograms](#summary)
 
