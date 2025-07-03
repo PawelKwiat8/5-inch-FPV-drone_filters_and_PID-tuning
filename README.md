@@ -12,7 +12,7 @@ Głównym celem przeprowadzonych prac było osiągnięcie następujących rezult
 *   Poprawa responsywności i precyzji sterowania.
 *   Maksymalna eliminacja zjawiska `propwash` (drgań w turbulentnym powietrzu).
 
-Aby to osiągnąć, w trakcie tego procesu dążyłem do spełnienia następujących kryteriów technicznych:
+kryteria techniczne:
 
 Filtracja:
 *  Redukcja szumów częstotliwościowych do poziomu poniżej **-10dB** na wykresie spektralnym.
@@ -42,7 +42,7 @@ Metoda ta  polega na wygenerowaniu przez nadajnik ciągłych, sinusoidalnych ruc
 https://www.youtube.com/watch?v=NczSDkKn9pY&ab_channel=PIDtoolbox
 
 Nalezy jej uzywac w trybe angle mode o okreśnych paramterach:
-
+![Alt text](angle_mode.png)
 
 
 2.  Testy w full Throttle
