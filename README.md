@@ -141,6 +141,6 @@ The following table presents the chronological progression of changes made and t
 
 ### 3. Set Pitch/Roll Balance -> Slider set to 0.8
 
-![PitchRollBalance0.8.PNG](./DGain1.2.PNG)
+![PitchRollBalance0.8.PNG](./PitchRollBalance0.8.PNG)
 ![PitchRollBalanceSliders.PNG](./PitchRollBalanceSliders.PNG)
 
