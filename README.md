@@ -134,4 +134,5 @@ The following table presents the chronological progression of changes made and t
 6. Set FF Gain.  
 7. Set D Max.
 
-### 2.
+### 2. D Gain
+![Dterm Spectrogram for logs 8-9](./PTB_FIGS_2025-07-04-1.png)
