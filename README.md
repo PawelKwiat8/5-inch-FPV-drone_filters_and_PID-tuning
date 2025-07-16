@@ -22,18 +22,7 @@ The main goal of this process was to achieve the following results through preci
 *   Improved responsiveness and control precision.
 *   Maximum elimination of **propwash**.
 
-## Technical Criteria:
-
-#### Filtering:
-*   Reduction of frequency noise to below **-10dB** on the spectrum analyzer.
-*   Gyro delay around **1.5ms**.
-  
-It should be noted that the above values are indicative. The key is to find a balance, as overly aggressive filtering introduces latency, while insufficient filtering can lead to overheating motors.
-
-#### PID tuning:
-*(To be documented in the future)*
-
-## Specifications
+## Drone Specifications
 
 *   **Frame:** Mark4 5" (225mm)
 *   **Flight Controller (FC):** YSIDO F4 V3S PLUS
@@ -44,14 +33,8 @@ It should be noted that the above values are indicative. The key is to find a ba
 
 ## Test Flight Types
 
-
-
 Data for analysis was collected using three key methods:
 ### 1. Basic Wobble Test
-
-
-
-#### Configuration
 This method involves generating continuous, sinusoidal movements in the Roll and Pitch axes using a transmitter script.
 
 **Source:**
@@ -80,7 +63,11 @@ It should be used with **Angle Mode** set to the following specific parameters:
 
 
 ## Filtering Optimization Process
-
+### Technical Criteria:
+*   Reduction of frequency noise to below **-10dB** on the spectrum analyzer.
+*   Gyro delay around **1.5ms**.
+  
+It should be noted that the above values are indicative. The key is to find a balance, as overly aggressive filtering introduces latency, while insufficient filtering can lead to overheating motors.
 ### Optimization Process and Latency Analysis
 ### 1. Basic Wobble Test
 The following table presents the chronological progression of changes made and their impact on system latency. The values in each cell are shown in the format **`Gyro / Dterm`** (in milliseconds).
@@ -127,3 +114,24 @@ The following table presents the chronological progression of changes made and t
 
 ### 3. Full Throttle Flight
 
+
+## PID Optimization Process
+### Technical Criteria:
+*   Minimize settling time
+*   Limit overshoot
+*   Keep motor thermal load within safe bounds
+
+### PID Tuning Procedure in Betaflight  
+*(based on Brian White - PID Toolbox, Oscar Liang)*  
+
+1. Set FF Gains, D Max, I Gain to 0.  
+2. Find D Gains → “PD Balance”.  
+3. Set Pitch/Roll same proportions using sliders:  
+   • Pitch Roll D  
+   • Pitch Roll P | I | FF  
+4. Find Master Multiplier gain.  
+5. Set I Gain.  
+6. Set FF Gain.  
+7. Set D Max.
+
+### 2.
