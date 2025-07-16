@@ -135,4 +135,11 @@ The following table presents the chronological progression of changes made and t
 7. Set D Max.
 
 ### 2. D Gain
-![Dterm Spectrogram for logs 8-9](./PTB_FIGS_2025-07-04-1.png)
+![DGainBalance.PNG](./PTB_FIGS_2025-07-04-1.png)
+
+![DGain1.2.PNG](./DGain1.2.PNG)
+
+### 3. Set Pitch/Roll Balance 
+
+![PitchRollBalance0.8.PNG](./DGain1.2.PNG)
+
