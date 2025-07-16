@@ -144,3 +144,8 @@ The following table presents the chronological progression of changes made and t
 ![PitchRollBalance0.8.PNG](./PitchRollBalance0.8.PNG)
 ![PitchRollBalanceSliders.PNG](./PitchRollBalanceSliders.PNG)
 
+## 4. Master Multiplier gain -> Slider set to 1.5
+
+
+...
+
