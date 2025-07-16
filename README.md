@@ -134,12 +134,13 @@ The following table presents the chronological progression of changes made and t
 6. Set FF Gain.  
 7. Set D Max.
 
-### 2. D Gain
+### 2. D Gain -> Slider set to 1.2
+
 ![DGainBalance.PNG](./PTB_FIGS_2025-07-04-1.png)
+![DGainSliders.PNG](./DGainSliders.PNG)
 
-![DGain1.2.PNG](./DGain1.2.PNG)
-
-### 3. Set Pitch/Roll Balance 
+### 3. Set Pitch/Roll Balance -> Slider set to 0.8
 
 ![PitchRollBalance0.8.PNG](./DGain1.2.PNG)
+![PitchRollBalanceSliders.PNG](./PitchRollBalanceSliders.PNG)
 
